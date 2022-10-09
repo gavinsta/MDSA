@@ -205,7 +205,7 @@ And, again, we want to find the CPF of this function. Only this time, we're tryi
 ```{r}
 xVals.adjustedAgain = seq (1.8,3,0.1)
 plot(xVals.adjustedAgain,sapply(xVals.adjustedAgain,function(x) integrate(pdf.actual,2,x)$value),type="l",ylab="Cumulative Probability",main="Cumulative Probability Function if beta = 1.8")
-abline(v=2,col="red")
+abline(v=2.018,col="red")
 ```
 
 # 10 d) In an attempt to decrease the probability of committing a Type II error, the value of $\alpha$  was increased from the value in (a) to 0.20. From a sample of $n=6$and a $\alpha = 0.20$, what value(s) of $X_{Min}$ would result in a rejection of the null hypothesis?
