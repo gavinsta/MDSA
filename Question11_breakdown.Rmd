@@ -6,7 +6,8 @@ This document is meant to only serve as a reference! Please let me know if I've 
 
 There are no final answers in this document for the sake of academic integrity, but if you follow the logic, it will be pretty obvious (I hope).
 
-# 11 The Question
+#The Question:
+
 Let $x1,x2,⋯,x6$ represent data observed from a random sample of $n = 6$ taken from a population of values described by the following probability density function.
 $$
 f(x_{i}; \beta) = e^{-(x_{i} - \beta)}  \hspace{0.5in} \beta \leq x_{i}< \infty
@@ -29,8 +30,9 @@ Feel free to skip.
 
 ## Parametric Statistics
 
-> "...a constant or variable term in a function that determines the specific form of the function but not its general nature"
-Let's lock down exactly what these equations are supposed to represent. For starters, $\beta$ is just a *parameter*. I think of it like it is **a 'consistent' value within the data**. 
+> "...a constant or variable term in a function that determines the specific form of the function but not its general nature..."
+
+Let's lock down exactly what these equations are supposed to represent. For starters, $\beta$ is just a *parameter*. I think of it like **a 'consistent' value separate from the data**. 
 
 This could be population Standard Deviation, population Mean, etc. something that is not changing. 
 
