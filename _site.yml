@@ -5,7 +5,7 @@ navbar:
   left:
     - text: "Home"
       href: index.html
-    - text: "Speed and Distance"
+    - text: "DATA602: My thoughts on Question 11"
       href: Question11_breakdown.html
 output:
   html_document:
