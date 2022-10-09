@@ -1,14 +1,6 @@
 ---
 title: Some \'guidance\' on Question 11.
-knit: (function(input_file, encoding) {
-    out_dir <- 'docs';
-    rmarkdown::render(input_file,
-      encoding=encoding,
-      output_file=file.path(dirname(input_file), out_dir, 'index.html'))})
 author: G
-output:
-  html_document: default
-  pdf_document: default
 ---
 This document is meant to only serve as a reference! Please let me know if I've made any glaring mistakes (I just thought of most of this at 5 AM). I thought I'd explain it really well once, but that means there is a lot of unnecessary elaboration if you already understand these concepts.
 
