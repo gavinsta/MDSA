@@ -30,7 +30,8 @@ Feel free to skip.
 ## Parametric Statistics
 
 > "...a constant or variable term in a function that determines the specific form of the function but not its general nature"
-Let's lock down exactly what these equations are supposed to represent. For starters, $\beta$ is just a *parameter*. I think of it like it is **a 'consistent' value within the data**. 
+
+Let's lock down exactly what these equations are supposed to represent. For starters, $\beta$ is just a *parameter*. I think of it like it is **a 'consistent' value related to, but unaffected by the data**. 
 
 This could be population Standard Deviation, population Mean, etc. something that is not changing. 
 
