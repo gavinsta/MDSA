@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="G" />
+
+
+<title>Some 'guidance' on Question 11.</title>
+
+<script src="site_libs/header-attrs-2.16/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">MDSA</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="Question11_breakdown.html">Speed and Distance</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Some 'guidance' on Question 11.</h1>
+<h4 class="author">G</h4>
+
+</div>
+
+
+<p>This document is meant to only serve as a reference! Please let me
+know if I’ve made any glaring mistakes (I just thought of most of this
+at 5 AM). I thought I’d explain it really well once, but that means
+there is a lot of unnecessary elaboration if you already understand
+these concepts.</p>
+<p>There are no final answers in this document for the sake of academic
+integrity, but if you follow the logic, it will be pretty obvious (I
+hope).</p>
+<div id="the-question" class="section level1">
+<h1>11 The Question</h1>
+<p>Let <span class="math inline">\(x1,x2,⋯,x6\)</span> represent data
+observed from a random sample of <span class="math inline">\(n =
+6\)</span> taken from a population of values described by the following
+probability density function. <span class="math display">\[
+f(x_{i}; \beta) = e^{-(x_{i} - \beta)}  \hspace{0.5in} \beta \leq
+x_{i}&lt; \infty
+\]</span> This sample/data is used to test the following hypothesis:
+<span class="math display">\[
+{\rm H}_{0}: \beta = 2 \hspace{0.5in} {\rm H}_{A}: \beta &lt; 2
+\]</span> A statistical test has been developed to test the validity of
+the above null hypothesis. This tests states the following: Reject the
+null hypothesis if the smallest data point in the sample, represented by
+<span class="math inline">\(X_{Min}\)</span>, is less than 2.018.</p>
+<p>In other words, reject the null hypothesis if <span
+class="math inline">\(X_{Min}&lt;2.018\)</span>, given this Probability
+Density Function:</p>
+<p><span class="math display">\[
+f(x_{Min}; \beta) = ne^{-n(x_{Min} - \beta)} \hspace{0.3in} \beta \leq
+x_{Min}
+\]</span></p>
+</div>
+<div id="conceptual-intro" class="section level1">
+<h1>Conceptual Intro</h1>
+<p>Feel free to skip.</p>
+<div id="parametric-statistics" class="section level2">
+<h2>Parametric Statistics</h2>
+<blockquote>
+<p>“…a constant or variable term in a function that determines the
+specific form of the function but not its general nature” Let’s lock
+down exactly what these equations are supposed to represent. For
+starters, <span class="math inline">\(\beta\)</span> is just a
+<em>parameter</em>. I think of it like it is <strong>a ‘consistent’
+value within the data</strong>.</p>
+</blockquote>
+<p>This could be population Standard Deviation, population Mean, etc.
+something that is not changing.</p>
+<p>To use a simple illustration: if we were looking at heights in MDSA
+students, we assume that when we take a random sample we will get a
+slightly different group of values every time. But the <em>mean</em> of
+the MDSA students (the population mean) will not change no matter how we
+sample. That’s all <span class="math inline">\(\beta\)</span> is too,
+some parameter (but we don’t know what).</p>
+</div>
+<div id="probability-density-function-pdf" class="section level2">
+<h2>Probability Density Function (PDF)</h2>
+<p>We’re given a Probability Density Function (PDF; which is the acronym
+I’ll continue to use), and this is a <strong>continuous</strong>
+function (think calculus right away).</p>
+<p>So what does this particular PDF look like? We can try plotting:
+<span class="math display">\[
+f(x_{i}; \beta) = e^{-(x_{i} - \beta)}
+\]</span> Like so:</p>
+<pre class="r"><code>pdf.exploringParameters = function(x,b){
+  exp(-(x-b))
+}</code></pre>
+<p>And there is only 1 constraint: <span class="math display">\[
+\beta \leq x_{i}&lt; \infty
+\]</span> In other words, whatever value we set for b, that needs to be
+the <em>minimum</em> value for <span
+class="math inline">\(x\)</span>.</p>
+<p>Let’s plot a bunch of different values of <span
+class="math inline">\(\beta\)</span>:</p>
+<pre class="r"><code>plotDifferentParameters = function(){
+  for (b in 1:10){
+    xSequence = seq(b,b+5,0.5)
+    plot(xSequence,pdf.exploringParameters(xSequence,b),main=paste(&quot;Plot of PDF when beta = &quot;,b),ylab=&quot;Probability Density&quot;,xlab=&quot;Values of X&quot;)
+  }
+}
+#call the function I just wrote to plot a bunch of different versions of the same graph
+plotDifferentParameters()</code></pre>
+<p><img src="Question11_breakdown_files/figure-html/unnamed-chunk-2-1.png" width="672" /><img src="Question11_breakdown_files/figure-html/unnamed-chunk-2-2.png" width="672" /><img src="Question11_breakdown_files/figure-html/unnamed-chunk-2-3.png" width="672" /><img src="Question11_breakdown_files/figure-html/unnamed-chunk-2-4.png" width="672" /><img src="Question11_breakdown_files/figure-html/unnamed-chunk-2-5.png" width="672" /><img src="Question11_breakdown_files/figure-html/unnamed-chunk-2-6.png" width="672" /><img src="Question11_breakdown_files/figure-html/unnamed-chunk-2-7.png" width="672" /><img src="Question11_breakdown_files/figure-html/unnamed-chunk-2-8.png" width="672" /><img src="Question11_breakdown_files/figure-html/unnamed-chunk-2-9.png" width="672" /><img src="Question11_breakdown_files/figure-html/unnamed-chunk-2-10.png" width="672" /></p>
+<p>Notice how the values of the y-axis are at a maximum of 1. It is
+deceptive because you might think that has something to do with
+probability, but it’s actually just a result of the original equation:
+<span class="math inline">\(e^{-(x_{i} - \beta)}\)</span>.</p>
+<p>If <span class="math inline">\(\beta = x_{i}\)</span> then you get
+<span class="math inline">\(e^0\)</span> which, of course, is 1.</p>
+<p>If there is a constant, then that will be the functions value when
+<span class="math inline">\(x_{i} = \beta\)</span>, so don’t let it trip
+you up.</p>
+<div id="the-questions-parameter-beta" class="section level3">
+<h3>The question’s parameter: <span
+class="math inline">\(\beta\)</span></h3>
+<p>For this question, we’re setting <span class="math inline">\(\beta =
+2\)</span> because that’s what we’re assuming this parameter to be
+(think back to if this was a Mean or Standard Deviation, or some other
+population parameter).</p>
+<p>I’ll define a new function called <code>pdf.betaIsTwo</code>, pretty
+obvious naming convention there…</p>
+<pre class="r"><code>#Same equation, but with only one variable now.
+pdf.betaIsTwo = function(x) {
+  exp(-(x-2))
+}</code></pre>
+<p>And let’s take a look, it’s supposed to be continuous, so I’m adding
+more points to smooth it out:</p>
+<pre class="r"><code>xVals = seq(2,10,0.1)
+plot(xVals,pdf.betaIsTwo(xVals),type=&quot;l&quot;,main=&quot;Probability Density Function, beta = 2&quot;,xaxp=c(2,10,8))</code></pre>
+<p><img src="Question11_breakdown_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>Notice again, the value on the y-axis is 1 when x = 2.</p>
+<p>Unlike discrete probabilities, the value at the x-axis is
+<strong>not</strong> the probability of that value occurring. And you
+<strong>can’t</strong> sum up the value of the PDF at 2 and 3 and 4 and
+say that is the probability of 2,3 and 4 occurring - a) Because the
+probabilities would add up to greater than 1 and - b) Because you could
+divide 3 and 4 with 3.5, and 3.5 and 4 with 3.75… that’s literally how
+calculus was invented.</p>
+<p>When we integrate over a PDF, we get the <em>cumulative probability
+function</em>. This is the way to find our concept of probability
+(like.. I don’t know… what is the probability that <span
+class="math inline">\(\beta\)</span> will be less than 2, for
+instance).</p>
+<pre class="r"><code>plot(xVals,sapply(xVals,function(x) integrate(pdf.betaIsTwo,2,x)$value),type=&quot;l&quot;,ylab=&quot;Cumulative Probability&quot;,main=&quot;Cumulative Probability Function&quot;)</code></pre>
+<p><img src="Question11_breakdown_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>With that we can dive right in:</p>
+</div>
+</div>
+</div>
+<div
+id="a-what-value-of-alpha-was-used-in-the-derivation-of-this-statistical-test"
+class="section level1">
+<h1>10 a) What value of <span class="math inline">\(\alpha\)</span> was
+used in the derivation of this statistical test?</h1>
+<div id="information-we-have" class="section level3">
+<h3>Information we have</h3>
+<p>We’re using a statistic, <span
+class="math inline">\(X_{Min}\)</span>, to ‘test’ if we should reject
+the null hypothesis: <span class="math inline">\(\beta = 2\)</span> and
+accept the alternate hypothesis: <span class="math inline">\(\beta &lt;
+2\)</span>. We’ve also said that if <span class="math inline">\(X_{Min}
+&lt; 2.018\)</span>, then we will reject the null hypothesis. The test
+probability density function is: <span class="math display">\[
+f(x_{Min}; \beta) = ne^{-n(x_{Min} - \beta)} \hspace{0.3in} \beta \leq
+x_{Min}
+\]</span> <span class="math inline">\(n\)</span> is yet another
+‘parameter’ in this function. We know that <span class="math inline">\(n
+= 6\)</span> (it was in the information given to us), so once again we
+have a 1 variable equation, which is easy to plot:</p>
+<pre class="r"><code>pdf.Xmin = function(x) {
+  6*exp(-6*(x-2))
+}
+
+xMinVals = seq(2,3,0.05)
+plot(xMinVals,pdf.Xmin(xMinVals),main=&quot;Probability Density Function of Xmin statistic&quot;)</code></pre>
+<p><img src="Question11_breakdown_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<div id="if-youre-not-convinced" class="section level4">
+<h4>If you’re not convinced…</h4>
+<p>…that <span class="math inline">\(n\)</span> is a doesn’t actually
+‘matter’, run these blocks for yourself.</p>
+<pre class="r"><code>pdf.XminChangeN = function (x,n){
+  n*exp(-n*(x-2))
+}
+plot(xMinVals,pdf.XminChangeN(xMinVals,3),main=&quot;Probability Density Function of Xmin statistic, n = 3&quot;)</code></pre>
+<pre class="r"><code>plot(xMinVals,pdf.XminChangeN(xMinVals,4),main=&quot;Probability Density Function of Xmin statistic, n = 4&quot;)</code></pre>
+<pre class="r"><code>plot(xMinVals,pdf.XminChangeN(xMinVals,5),main=&quot;Probability Density Function of Xmin statistic, n = 5&quot;)</code></pre>
+<p>Again, don’t mind that the probability at <span
+class="math inline">\(X = 2\)</span> is apparently 6. It doesn’t matter.
+What we care about is, again, the:</p>
+</div>
+</div>
+<div id="cumulative-probability-function-cpf" class="section level3">
+<h3>Cumulative Probability Function (CPF)</h3>
+<p>Now, hopefully, we can see again that the <strong>cumulative</strong>
+probability caps out at 1 (all the possible options combined should
+always equal 1!)</p>
+<p>I’ll also add a line at <span class="math inline">\(X_{min} =
+2.018\)</span>. This time, we do care about the intersect of the
+Cumulative Probability Function with our value, because that wil tell us
+the <strong>cumulative probability</strong> of the original PDF for
+<span class="math inline">\(X_{Min}\)</span>, at a given value of <span
+class="math inline">\(X\)</span></p>
+<pre class="r"><code>plot(xMinVals,sapply(xMinVals,function(x) integrate(pdf.Xmin,2,x)$value),type=&quot;l&quot;,ylab=&quot;Cumulative Probability&quot;,main=&quot;Cumulative Probability Function of X-min&quot;)
+abline(v=2.018,col=&quot;green&quot;)</code></pre>
+<p><img src="Question11_breakdown_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+</div>
+<div id="more-conceptual-stuff-the-alpha-value" class="section level3">
+<h3>More conceptual stuff: The <span
+class="math inline">\(\alpha\)</span> value</h3>
+<p>Alpha is just the benchmark we set for ourselves where we are
+comfortable with saying we haven’t committed a Type I error. So if this
+test is saying we reject the null hypothesis if <span
+class="math inline">\(X_{Min} &lt; 2.018\)</span>, then it has
+<strong>already</strong> established an alpha level. i.e. alpha is
+whatever probability the CPF and PDF gives us, at <span
+class="math inline">\(X = 2.018\)</span> is <span
+class="math inline">\(\alpha\)</span>.</p>
+</div>
+<div id="back-to-the-question" class="section level3">
+<h3>Back to the question:</h3>
+<p>If we integrate the PDF of <span
+class="math inline">\(X_{Min}\)</span> over the range 2.018 to
+‘infinity’ we would be calculating the area under the curve on the right
+side of the red line:</p>
+<pre class="r"><code>plot(xMinVals,pdf.Xmin(xMinVals),type=&#39;l&#39;,main=&quot;Probability Density Function of Xmin statistic&quot;)
+abline(v=2.018,col=&quot;red&quot;)</code></pre>
+<p><img src="Question11_breakdown_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p>But we want to find the <span class="math inline">\(\alpha\)</span>
+for <span class="math inline">\(X_{Min} &lt; 2.018\)</span>, so what do
+we need to do?</p>
+</div>
+</div>
+<div
+id="b-does-this-sample-support-the-null-hypothesis-above-explain-your-answer.-note-the-sort-function-will-sort-data-points-in-ascending-order."
+class="section level1">
+<h1>10 b) Does this sample support the null hypothesis above? Explain
+your answer. (Note, the sort function will sort data points in ascending
+order.)</h1>
+<p>From here on out, things should be more straightforward if you
+understand how to think about PDFs and CPFs.</p>
+<p><strong>Hint:</strong> You don’t need to use the <code>sort</code>
+function to find <span class="math inline">\(X_{Min}\)</span> in this
+sample…</p>
+</div>
+<div
+id="c-revisiting-the-statistical-test-in-a-based-on-n6-and-the-found-value-of-alpha-compute-the-probability-of-concluding-that-beta-2-when-in-fact-beta-1.8."
+class="section level1">
+<h1>10 c) Revisiting the statistical test in (a), based on <span
+class="math inline">\(n=6\)</span> and the found value of <span
+class="math inline">\(\alpha\)</span>: compute the probability of
+concluding that <span class="math inline">\(\beta = 2\)</span> when in
+fact <span class="math inline">\(\beta = 1.8\)</span>.</h1>
+<p>A better way of understanding:</p>
+<blockquote>
+<p>compute the probability of concluding that <span
+class="math inline">\(\beta = 2\)</span> when in fact <span
+class="math inline">\(\beta = 1.8\)</span>.</p>
+</blockquote>
+<p>is:</p>
+<blockquote>
+<p>what is the <strong>probability</strong> that our test statistic
+(<span class="math inline">\(X_{Min}\)</span>) fails to reject the
+hypothesis (<span class="math inline">\(\beta = 2\)</span>), and we
+don’t accept the alternate hypthesis (<span class="math inline">\(\beta
+&lt; 2\)</span>), even if the underlying parameter is
+<strong>actually</strong> lower (1.8) and therefore <span
+class="math inline">\(\beta &lt; 2\)</span></p>
+</blockquote>
+<p>It’s sort of a roundabout way of thinking about this question. We’re
+sort of <em>testing our test</em>.</p>
+<p>Earlier, we started by assuming that <span
+class="math inline">\(\beta = 2\)</span>, and then tried to find out
+what the probability of getting <span class="math inline">\(X_{Min} &lt;
+2.018\)</span>, and therefore concluding the null hypothesis was false
+(i.e. <span class="math inline">\(\beta &lt; 2\)</span> is ‘true’),
+would be.</p>
+<p>Again, that’s what <span class="math inline">\(\alpha\)</span> is. If
+the probability of our test statistic being &lt; 2.018 was very high,
+then we would very often conclude that <span class="math inline">\(\beta
+&lt; 2\)</span>, even if it wasn’t true (Type I error).</p>
+<p>Now, we are being asked to do the opposite. If we assume <span
+class="math inline">\(\beta = 1.8\)</span>, what is the probability that
+we will conclude <span class="math inline">\(\beta \nless 2\)</span>,
+even though it has to be because we’re starting with that
+assumption!</p>
+<p>So since <span class="math inline">\(\beta = 1.8\)</span> is our
+‘reality’ now, we should obviously make a new equation (<span
+class="math inline">\(n\)</span> is still 6):</p>
+<pre class="r"><code>pdf.actual = function(x){
+  6*exp(-6*(x-1.8))
+}</code></pre>
+<p>And, again, we want to find the CPF of this function. Only this time,
+we’re trying to figure out, what is the probability that we might say
+<span class="math inline">\(\beta \nless 2\)</span>, even though it
+is.</p>
+<p><strong>So which side of the curve should we be looking?</strong></p>
+<pre class="r"><code>xVals.adjustedAgain = seq (1.8,3,0.1)
+plot(xVals.adjustedAgain,sapply(xVals.adjustedAgain,function(x) integrate(pdf.actual,2,x)$value),type=&quot;l&quot;,ylab=&quot;Cumulative Probability&quot;,main=&quot;Cumulative Probability Function if beta = 1.8&quot;)
+abline(v=2,col=&quot;red&quot;)</code></pre>
+<p><img src="Question11_breakdown_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+</div>
+<div
+id="d-in-an-attempt-to-decrease-the-probability-of-committing-a-type-ii-error-the-value-of-alpha-was-increased-from-the-value-in-a-to-0.20.-from-a-sample-of-n6and-a-alpha-0.20-what-values-of-x_min-would-result-in-a-rejection-of-the-null-hypothesis"
+class="section level1">
+<h1>10 d) In an attempt to decrease the probability of committing a Type
+II error, the value of <span class="math inline">\(\alpha\)</span> was
+increased from the value in (a) to 0.20. From a sample of <span
+class="math inline">\(n=6\)</span>and a <span
+class="math inline">\(\alpha = 0.20\)</span>, what value(s) of <span
+class="math inline">\(X_{Min}\)</span> would result in a rejection of
+the null hypothesis?</h1>
+<p>So, with all the work we’ve done up to this point, we should be more
+than equipped to handle this. We’ve already calculated <span
+class="math inline">\(\alpha\)</span> before. We’ve also changed the
+equation a bunch of times.</p>
+<p>I’m sure there are lots of elegant solutions out there, but I just
+opted for trial and error:</p>
+<p>Try a bunch of values for <span
+class="math inline">\(X_{Min}\)</span> until… I’ll leave the rest up to
+you :)</p>
+</div>
+<div id="hopefully-this-was-helpful" class="section level1">
+<h1>Hopefully this was helpful!</h1>
+<p>Stats are kind of un-intuitive and it doesn’t help that a lot of
+these questions are more challenging your English-comprehension than
+your stats/math knowledge.</p>
+</div>
+<div id="sources" class="section level1">
+<h1>Sources</h1>
+<p><a
+href="https://www.itl.nist.gov/div898/handbook/eda/section3/eda362.htm#PPF">Overview
+of Distributions</a></p>
+<p><a
+href="https://mast.queensu.ca/~stat455/lecturenotes/set4.pdf">Exponential
+Distribtuion</a></p>
+<p><a
+href="https://math.stackexchange.com/questions/147528/how-can-you-have-a-density-function-that-depends-on-a-parameter">A
+relevant StackExchange question/answer</a></p>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
